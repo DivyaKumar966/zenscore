@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Page 2</title>
+<link rel="icon" type="image/png" href="./logo.jpeg">
+
+<link rel="stylesheet" href="page2.css">
+</head>
+
+<body>
+
+<div class="header">
+    <div class="title">
+<h1>Student Database System</h1>
+</div>
+<div class="nav">
+    <nav href="#">Home</nav>
+    <nav href="#">About</nav>
+    <nav href="#">Help</nav>
+    <button>Logout</button>
+</div>
+</div>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left-box">
+
+        <select id="department">
+            <option value="">Select Department</option>
+            <option value="IT">IT</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">MECH</option>
+            <option value="AIDS">AIDS</option>
+            <option value="CIVIL">CIVIL</option>
+        </select>
+
+        <select id="year">
+            <option value="">Select Year</option>
+            <option value="1">1st</option>
+            <option value="2">2nd</option>
+            <option value="3">3rd</option>
+            <option value="4">4th</option>
+        </select>
+
+        <button class="next" onclick="checkInput()">Next</button>
+
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- RIGHT SIDE -->
+    <div class="register">
+
+        <div class="student-box">
+
+            <h2>Enter Register No</h2>
+
+            <input class="reg-input" type="text" placeholder="Enter Register Number">
+
+            <button class="submit-btn">Submit</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="contentspace">
+
+    <div class="content1">
+        <p>Please select the Department and Year to continue.</p>
+        <p>After selecting the options, click <span>"Next"</span> to view the student information.</p>
+    </div>
+
+    <div class="content2">
+        <p>Enter Student Register Number and click <span>Submit</span> to view their Information.</p>
+    </div>
+
+</div>
+
+<footer class="footer">
+<p>© 2026 Student Database System | NSN CET</p>
+</footer>
+
+<script>
+
+function checkInput(){
+
+let dept = document.getElementById("department").value;
+let year = document.getElementById("year").value;
+
+if(dept === "" && year === ""){
+alert("Please Select Department and Year");
+}
+else if(dept === ""){
+alert("Please Select Department");
+}
+else if(year === ""){
+alert("Please Select Year");
+}
+else{
+location.href = "page3.html?dept=" + dept + "&year=" + year;
+}
+
+}
+
+</script>
+
+</body>
+</html>

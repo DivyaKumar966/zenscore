@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Marks System</title>
+</head>
+<link rel="stylesheet" href="./page4.css">
+<body>
+
+<div id="mainPage">
+
+<h1>Exam Selection</h1>
+
+<div class="examButtons">
+
+<div class="examBox">
+<button onclick="openGrading('CAT1')">CAT 1</button>
+<div id="cat1status"></div>
+</div>
+
+<div class="examBox">
+<button onclick="openGrading('CAT2')">CAT 2</button>
+<div id="cat2status"></div>
+</div>
+
+<div class="examBox">
+<button onclick="openGrading('MODEL1')">MODEL 1</button>
+<div id="model1status"></div>
+</div>
+
+<div class="examBox">
+<button onclick="openGrading('MODEL2')">MODEL 2</button>
+<div id="model2status"></div>
+</div>
+
+</div>
+</div>
+
+
+<div id="gradingPage">
+
+<h1 id="examTitle"></h1>
+
+<table id="marksTable">
+
+<tr>
+<th>UID</th>
+<th>Name</th>
+<th>Marks</th>
+<th>Result</th>
+</tr>
+
+<tr>
+<td>23CS101</td>
+<td>Arun</td>
+<td><input onkeydown="checkEnter(event,this)"></td>
+<td></td>
+</tr>
+
+<tr>
+<td>23CS102</td>
+<td>Ravi</td>
+<td><input onkeydown="checkEnter(event,this)"></td>
+<td></td>
+</tr>
+
+<tr>
+<td>23CS103</td>
+<td>Kumar</td>
+<td><input onkeydown="checkEnter(event,this)"></td>
+<td></td>
+</tr>
+
+<tr>
+<td>23CS104</td>
+<td>Rahul</td>
+<td><input onkeydown="checkEnter(event,this)"></td>
+<td></td>
+</tr>
+
+</table>
+
+<div class="stats">
+
+<p>Pass Percentage : <span id="passPercent">0%</span></p>
+<p>Fails : <span id="failCount">0</span></p>
+<p>Absents : <span id="absentCount">0</span></p>
+
+</div>
+
+<br>
+
+<button onclick="saveNext()">Save & Next</button>
+<button onclick="goBack()">Back</button>
+
+</div>
+
+
+<script src="./page4.js"></script>
+</body>
+</html>
