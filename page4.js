@@ -1,6 +1,15 @@
 
 
 /* fresh run clear */
+let params = new URLSearchParams(window.location.search);
+
+let dept = params.get("dept");
+let year = params.get("year");
+
+document.getElementById("showDept").innerText = "Department : " + dept;
+document.getElementById("showYear").innerText = "Year : " + year;
+
+
 
 window.onload=function(){
 
@@ -19,6 +28,7 @@ function openGrading(exam){
 currentExam=exam;
 
 document.getElementById("mainPage").style.display="none";
+document.getElementById("backbtn").style.display="none";
 document.getElementById("gradingPage").style.display="block";
 
 document.getElementById("examTitle").innerText=exam+" - Student Grading";
@@ -79,7 +89,8 @@ examStats=data.stats;
 
 function goBack(){
 
-document.getElementById("mainPage").style.display="block";
+document.getElementById("mainPage").style.display="flex";
+document.getElementById("backbtn").style.display="flex";
 document.getElementById("gradingPage").style.display="none";
 
 }
@@ -197,7 +208,8 @@ let id=currentExam.toLowerCase()+"status";
 
 document.getElementById(id).innerText="Finished";
 document.getElementById(id).className="finished";
-
-goBack();
-
 }
+function gobackpage3() {
+            location.href = "page3.html";
+        }
+

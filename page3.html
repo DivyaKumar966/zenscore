@@ -12,7 +12,7 @@
 
     <div class="header">
         <div class="title">
-            <h1>Student Database System</h1>
+            <h1>ZenScore</h1>
         </div>
         <div class="nav">
             <nav href="#">Home</nav>
@@ -116,8 +116,14 @@
             location.href = "page2.html";
         }
         function gonext() {
-            location.href = "page4.html";
+            let params = new URLSearchParams(window.location.search);
+            let dept = params.get("dept");
+            let year = params.get("year");
+
+            window.location.href = "page4.html?dept=" + dept + "&year=" + year;
         }
+
+
     </script>
 </body>
 
