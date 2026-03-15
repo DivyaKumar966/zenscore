@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 3 </title>
+    <link rel="icon" type="image/png" href="./logo.jpeg">
 </head>
 <link rel="stylesheet" href="./page3.css">
 
@@ -15,67 +16,114 @@
             <h1>ZenScore</h1>
         </div>
         <div class="nav">
-            <nav href="#">Home</nav>
-            <nav href="#">About</nav>
-            <nav href="#">Help</nav>
-            <button>Logout</button>
-        </div>
+        <nav>
+            <a href="page2.html">Home</a>
+        </nav>
+        <nav>
+            <a href="#">About</a>
+        </nav>
+        <nav>
+            <a href="#">Help</a>
+        </nav>
+        <button onclick="window.location.href='page1.html'">Logout</button>
+    </div>
     </div>
 
     <div class="info">
         <h2 id="subjectCount"></h2>
-
     </div>
+
     <div class="info">
         <h2 id="showDept"></h2>
         <h2 id="showYear"></h2>
     </div>
+
     <div class="tables">
         <table id="subjectTable">
             <tr>
                 <th>CODE</th>
                 <th>SUBJECT</th>
                 <th>FACULTY</th>
+                <th>ACTION</th>
             </tr>
             <tr>
                 <td>CCS351</td>
                 <td>VIR</td>
                 <td>VIJAY</td>
+                <td><button onclick="goSubject(this)">Click</button></td>
             </tr>
             <tr>
                 <td>IT568</td>
                 <td>UI/UX</td>
                 <td>THARIQ</td>
+                <td><button onclick="goSubject(this)">Click</button></td>
             </tr>
             <tr>
                 <td>CCS564</td>
                 <td>OOSE</td>
                 <td>IT HOD</td>
+                <td><button onclick="goSubject(this)">Click</button></td>
             </tr>
             <tr>
                 <td>CCS667</td>
                 <td>CSM</td>
                 <td>CSE HOD</td>
+                <td><button onclick="goSubject(this)">Click</button></td>
             </tr>
             <tr>
                 <td>CCS354</td>
                 <td>NS</td>
                 <td>MANIKANADHAN</td>
+                <td><button onclick="goSubject(this)">Click</button></td>
             </tr>
         </table>
     </div>
+
     <div class="buttons">
-        <button type="button" id="backbtn" onclick="goback()">&#171; Back</button>
+        <button type="button" id="backbtn" onclick="window.history.back()">&#171; Back</button>
         <button type="button" id="editbtn" onclick="enableEdit()">Edit</button>
         <button type="button" id="savebtn" onclick="disableEdit()">Save</button>
-        <button type="button" id="compbtn" onclick="gonext()">Next</button>
+        <button type="button" id="compbtn">Next</button>
     </div>
 
     <footer class="footer">
-        <p>© 2026 Student Database System | NSN CET</p>
-    </footer>
-    <script>
+        <div class="footer-container">
 
+            <div class="footer-col">
+                <h2 class="footer-logo">ZenScore</h2>
+                <p>Smart Student Marks Management System</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <p>Home</p>
+                <p>Subjects</p>
+                <p>Results</p>
+                <p>Help</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Developed By</h3>
+                <p>Department of IT</p>
+                <p>NSN College of Engineering</p>
+                <p>Karur</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Email : zenscore@nsn.ac.in</p>
+                <p>Phone : +91 XXXXX XXXXX</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 ZenScore | All Rights Reserved
+        </div>
+
+    </footer>
+
+    <script>
 
         let params = new URLSearchParams(window.location.search);
 
@@ -98,24 +146,54 @@
 
             let cells = table.getElementsByTagName("td");
 
-            for (let i = 0; i < cells.length; i++) { cells[i].contentEditable = true; cells[i].style.background = "#222"; }
+            for (let i = 0; i < cells.length; i++) {
+                cells[i].contentEditable = true;
+                cells[i].style.background = "#222";
+            }
+            // table buttons disable
+            let tableButtons = table.getElementsByTagName("button");
+
+            for (let i = 0; i < tableButtons.length; i++) {
+                tableButtons[i].disabled = true;
+                tableButtons[i].style.opacity = "0.5";
+                tableButtons[i].style.cursor = "not-allowed";
+            }
             document.getElementById("backbtn").disabled = true;
-            document.getElementById("compbtn").disabled = true; document.getElementById("editbtn").disabled = true;
+            document.getElementById("compbtn").disabled = true;
+            document.getElementById("editbtn").disabled = true;
             document.getElementById("savebtn").disabled = false;
+
         }
 
         function disableEdit() {
-            let table = document.getElementById("subjectTable"); let cells = table.getElementsByTagName("td"); for (let i = 0; i <
-                cells.length; i++) { cells[i].contentEditable = false; cells[i].style.background = "transparent"; }
+
+            let table = document.getElementById("subjectTable");
+            let cells = table.getElementsByTagName("td");
+
+            for (let i = 0; i < cells.length; i++) {
+                cells[i].contentEditable = false;
+                cells[i].style.background = "transparent";
+            }
+            // table buttons enabled
+            let tableButtons = table.getElementsByTagName("button");
+
+            for (let i = 0; i < tableButtons.length; i++) {
+                tableButtons[i].disabled = false;
+                tableButtons[i].style.opacity = "1";
+                tableButtons[i].style.cursor = "pointer";
+            }
             document.getElementById("backbtn").disabled = false;
-            document.getElementById("compbtn").disabled = false; document.getElementById("editbtn").disabled = false;
+            document.getElementById("compbtn").disabled = false;
+            document.getElementById("editbtn").disabled = false;
             document.getElementById("savebtn").disabled = false;
         }
 
         function goback() {
             location.href = "page2.html";
         }
+
         function gonext() {
+
             let params = new URLSearchParams(window.location.search);
             let dept = params.get("dept");
             let year = params.get("year");
@@ -124,7 +202,30 @@
         }
 
 
+        function goSubject(btn) {
+            let params = new URLSearchParams(window.location.search);
+            let dept = params.get("dept");
+            let year = params.get("year");
+
+            let row = btn.parentElement.parentElement;
+
+            let code = row.cells[0].innerText;
+            let subject = row.cells[1].innerText;
+            let faculty = row.cells[2].innerText;
+
+            localStorage.setItem("code", code);
+            localStorage.setItem("subject", subject);
+            localStorage.setItem("faculty", faculty);
+
+            window.location.href =
+                "page4.html?code=" + code +
+                "&subject=" + subject +
+                "&faculty=" + faculty +
+                "&dept=" + dept +
+                "&year=" + year;
+        }
     </script>
+
 </body>
 
 </html>

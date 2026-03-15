@@ -10,6 +10,17 @@ document.getElementById("showDept").innerText = "Department : " + dept;
 document.getElementById("showYear").innerText = "Year : " + year;
 
 
+let params2 = new URLSearchParams(window.location.search);
+
+let code = params2.get("code");
+let subject = params2.get("subject");
+let faculty = params2.get("faculty");
+
+document.getElementById("showCode").innerText = "Code : " + code;
+document.getElementById("showSubject").innerText = "Subject : " + subject;
+document.getElementById("showFaculty").innerText = "Faculty : " + faculty;
+
+
 
 window.onload=function(){
 
@@ -208,6 +219,8 @@ let id=currentExam.toLowerCase()+"status";
 
 document.getElementById(id).innerText="Finished";
 document.getElementById(id).className="finished";
+
+goBack();
 }
 function gobackpage3() {
             location.href = "page3.html";

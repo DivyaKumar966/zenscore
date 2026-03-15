@@ -14,16 +14,27 @@
             <h1>ZenScore</h1>
         </div>
         <div class="nav">
-            <nav href="#">Home</nav>
-            <nav href="#">About</nav>
-            <nav href="#">Help</nav>
-            <button>Logout</button>
+            <nav>
+                <a href="page2.html">Home</a>
+            </nav>
+            <nav>
+                <a href="#">About</a>
+            </nav>
+            <nav>
+                <a href="#">Help</a>
+            </nav>
+            <button onclick="window.location.href='page1.html'">Logout</button>
         </div>
     </div>
     <div class="maincontent">
         <div id="mainPage">
 
             <h1>Exam Selection</h1>
+            <h2 id="showCode"></h2>
+            <br>
+            <h2 id="showSubject"></h2>
+            <br>
+            <h2 id="showFaculty"></h2>
 
             <div class="examButtons">
 
@@ -116,8 +127,45 @@
         <h2 id="showYear"></h2>
     </div>
     <div class="backButton">
-        <button type="button" id="backbtn" onclick="window.location.href='page3.html'">&#171; Back</button>
+        <button type="button" id="backbtn" onclick="window.history.back()">&#171; Back</button>
     </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <h2 class="footer-logo">ZenScore</h2>
+                <p>Smart Student Marks Management System</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <p>Home</p>
+                <p>Subjects</p>
+                <p>Results</p>
+                <p>Help</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Developed By</h3>
+                <p>Department of IT</p>
+                <p>NSN College of Engineering</p>
+                <p>Karur</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Email : zenscore@nsn.ac.in</p>
+                <p>Phone : +91 XXXXX XXXXX</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 ZenScore | All Rights Reserved
+        </div>
+
+    </footer>
 
     <script src="./page4.js"></script>
 </body>

@@ -2,116 +2,156 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<title>Page 2</title>
-<link rel="icon" type="image/png" href="./logo.jpeg">
+    <meta charset="UTF-8">
+    <title>Page 2</title>
+    <link rel="icon" type="image/png" href="./logo.jpeg">
 
-<link rel="stylesheet" href="page2.css">
+    <link rel="stylesheet" href="page2.css">
 </head>
 
 <body>
 
-<div class="header">
-    <div class="title">
-<h1>ZenScore</h1>
-</div>
-<div class="nav">
-    <nav href="#">Home</nav>
-    <nav href="#">About</nav>
-    <nav href="#">Help</nav>
-    <button>Logout</button>
-</div>
-</div>
-
-<div class="container">
-
-    <!-- LEFT SIDE -->
-    <div class="left-box">
-
-        <select id="department">
-            <option value="">Select Department</option>
-            <option value="IT">IT</option>
-            <option value="CSE">CSE</option>
-            <option value="ECE">ECE</option>
-            <option value="EEE">EEE</option>
-            <option value="MECH">MECH</option>
-            <option value="AIDS">AIDS</option>
-            <option value="CIVIL">CIVIL</option>
-        </select>
-
-        <select id="year">
-            <option value="">Select Year</option>
-            <option value="1">1st</option>
-            <option value="2">2nd</option>
-            <option value="3">3rd</option>
-            <option value="4">4th</option>
-        </select>
-
-        <button class="next" onclick="checkInput()">Next</button>
-
+    <div class="header">
+        <div class="title">
+            <h1>ZenScore</h1>
+        </div>
+        <div class="nav">
+            <nav>
+                <a href="page2.html">Home</a>
+            </nav>
+            <nav>
+                <a href="#">About</a>
+            </nav>
+            <nav>
+                <a href="#">Help</a>
+            </nav>
+            <button onclick="window.location.href='page1.html'">Logout</button>
+        </div>
     </div>
 
-    <!-- DIVIDER -->
-    <div class="divider"></div>
+    <div class="container">
 
-    <!-- RIGHT SIDE -->
-    <div class="register">
+        <!-- LEFT SIDE -->
+        <div class="left-box">
 
-        <div class="student-box">
+            <select id="department">
+                <option value="">Select Department</option>
+                <option value="IT">IT</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="MECH">MECH</option>
+                <option value="AIDS">AIDS</option>
+                <option value="CIVIL">CIVIL</option>
+            </select>
 
-            <h2>Enter Register No</h2>
+            <select id="year">
+                <option value="">Select Year</option>
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+            </select>
 
-            <input class="reg-input" type="text" placeholder="Enter Register Number">
+            <button class="next" onclick="checkInput()">Next</button>
 
-            <button class="submit-btn">Submit</button>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="divider"></div>
+
+        <!-- RIGHT SIDE -->
+        <div class="register">
+
+            <div class="student-box">
+
+                <h2>Enter Register No</h2>
+
+                <input class="reg-input" type="text" placeholder="Enter Register Number">
+
+                <button class="submit-btn">Submit</button>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
+    <!-- INSTRUCTIONS -->
+    <div class="contentspace">
 
-<!-- INSTRUCTIONS -->
-<div class="contentspace">
+        <div class="content1">
+            <p>Please select the Department and Year to continue.</p>
+            <p>After selecting the options, click <span>"Next"</span> to view the student information.</p>
+        </div>
 
-    <div class="content1">
-        <p>Please select the Department and Year to continue.</p>
-        <p>After selecting the options, click <span>"Next"</span> to view the student information.</p>
+        <div class="content2">
+            <p>Enter Student Register Number and click <span>Submit</span> to view their Information.</p>
+        </div>
+
     </div>
 
-    <div class="content2">
-        <p>Enter Student Register Number and click <span>Submit</span> to view their Information.</p>
-    </div>
+    <footer class="footer">
+        <div class="footer-container">
 
-</div>
+            <div class="footer-col">
+                <h2 class="footer-logo">ZenScore</h2>
+                <p>Smart Student Marks Management System</p>
+            </div>
 
-<footer class="footer">
-<p>© 2026 Student Database System | NSN CET</p>
-</footer>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <p>Home</p>
+                <p>Subjects</p>
+                <p>Results</p>
+                <p>Help</p>
+            </div>
 
-<script>
+            <div class="footer-col">
+                <h3>Developed By</h3>
+                <p>Department of IT</p>
+                <p>NSN College of Engineering</p>
+                <p>Karur</p>
+            </div>
 
-function checkInput(){
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Email : zenscore@nsn.ac.in</p>
+                <p>Phone : +91 XXXXX XXXXX</p>
+            </div>
 
-let dept = document.getElementById("department").value;
-let year = document.getElementById("year").value;
+        </div>
 
-if(dept === "" && year === ""){
-alert("Please Select Department and Year");
-}
-else if(dept === ""){
-alert("Please Select Department");
-}
-else if(year === ""){
-alert("Please Select Year");
-}
-else{
-location.href = "page3.html?dept=" + dept + "&year=" + year;
-}
+        <div class="footer-bottom">
+            © 2026 ZenScore | All Rights Reserved
+        </div>
 
-}
+    </footer>
 
-</script>
+    <script>
+
+        function checkInput() {
+
+            let dept = document.getElementById("department").value;
+            let year = document.getElementById("year").value;
+
+            if (dept === "" && year === "") {
+                alert("Please Select Department and Year");
+            }
+            else if (dept === "") {
+                alert("Please Select Department");
+            }
+            else if (year === "") {
+                alert("Please Select Year");
+            }
+            else {
+                location.href = "page3.html?dept=" + dept + "&year=" + year;
+            }
+
+        }
+
+    </script>
 
 </body>
+
 </html>

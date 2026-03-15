@@ -171,8 +171,8 @@ input {
     margin-top: 20px;
     font-size: 25px;
     text-align: center;
-    
-    
+
+
 }
 
 .buttons {
@@ -233,7 +233,7 @@ body {
     align-items: center;
 }
 
-.nav nav {
+.nav a {
     color: black;
     font-weight: bold;
     cursor: pointer;
@@ -242,7 +242,7 @@ body {
     text-decoration: none;
 }
 
-.nav nav:hover {
+.nav a:hover {
     color: #ff2770;
     transform: scale(1.05);
 }
@@ -256,6 +256,11 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+}
+
+.nav button:hover {
+    background: #d81b60;
+    transform: scale(1.05);
 }
 
 /* MAIN CONTENT */
@@ -363,8 +368,14 @@ input {
     margin-top: 20px;
     font-size: 25px;
     text-align: center;
-    
-    
+
+
+}
+
+.finished {
+    color: #ff2770;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .buttons {
@@ -382,47 +393,99 @@ input {
     margin-top: 40px;
 }
 
-.backButton{
-display:flex;
-justify-content:center;
-gap:40px;
-margin:60px 0 40px;
-flex-wrap:wrap; 
-align-items: center;  /* responsive */
+.backButton {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px 0 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    /* responsive */
 }
 
-button{
-color:black;
-background:#45f3ff;
-border:none;
-border-radius:25px;
-padding:12px 25px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-transition:0.2s;   /* ⭐ move here */
+button {
+    color: black;
+    background: #45f3ff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    /* ⭐ move here */
 }
 
-button:hover{
-background:#00FFFF;
-color:white;
-transform:scale(1.05);
+button:hover {
+    background: #00FFFF;
+    color: white;
+    transform: scale(1.05);
 }
 
-button{
-color:black;
-background:#45f3ff;
-border:none;
-border-radius:25px;
-padding:12px 25px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-transition:0.2s;   /* ⭐ move here */
+button {
+    color: black;
+    background: #45f3ff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    /* ⭐ move here */
 }
 
-button:hover{
-background:#00FFFF;
-color:white;
-transform:scale(1.05);
+button:hover {
+    background: #00FFFF;
+    color: white;
+    transform: scale(1.05);
+}
+
+.footer {
+    background: #45f3ff;
+    padding-top: 40px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: black;
+    padding-bottom: 30px;
+}
+
+.footer-col {
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-logo {
+    color: #ff2770;
+    font-size: 32px;
+    text-shadow: 0 0 6px #ff2770;
+    margin-bottom: 10px;
+}
+
+.footer-col h3 {
+    margin-bottom: 12px;
+}
+
+.footer-col p {
+    margin: 6px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-col p:hover {
+    color: #ff2770;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
 }
