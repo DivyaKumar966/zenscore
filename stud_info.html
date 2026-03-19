@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Info</title>
+    <link rel="stylesheet" href="./stud_info.css">
+</head>
+
+<body>
+    <h1>STUDENT INFORMATION</h1>
+    <div class="container">
+
+        <div class="info">
+            <div class="img">
+                <img src="./profile image.png" alt="profile image">
+            </div>
+            <div class="datas">
+                <h2 id="name">NAME :</h2>
+                <h2 id="regNo">REGISTER NO :</h2>
+                <h2 id="dept">DEPARTMENT :</h2>
+                <h2 id="year">YEAR :</h2>
+            </div>
+        </div>
+
+        <div class="marks">
+            <table>
+                <tr>
+                    <th>SUBJECTS</th>
+                    <th>CAT 1</th>
+                    <th>CAT 2</th>
+                    <th>MODEL 1</th>
+                    <th>MODEL 2</th>
+                </tr>
+                <tr>
+                    <td>VIR</td>
+                    <td>50</td>
+                    <td>60</td>
+                    <td>87</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>VIR</td>
+                    <td>50</td>
+                    <td>60</td>
+                    <td>87</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>VIR</td>
+                    <td>50</td>
+                    <td>60</td>
+                    <td>87</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>VIR</td>
+                    <td>50</td>
+                    <td>60</td>
+                    <td>87</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>VIR</td>
+                    <td>50</td>
+                    <td>60</td>
+                    <td>87</td>
+                    <td>31</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let params = new URLSearchParams(window.location.search);
+
+ 
+        let regNoValue = params.get("regNo");
+        let deptValue = params.get("dept");
+        let yearValue = params.get("year");
+        let nameValue = params.get("name"); 
+
+        document.getElementById("regNo").innerText = "REGISTER NO : " + (regNoValue ? regNoValue : "N/A");
+    </script>
+</body>
+
+</html>
