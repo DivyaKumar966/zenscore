@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Page 2</title>
     <link rel="icon" type="image/png" href="./logo.jpeg">
-
     <link rel="stylesheet" href="page2.css">
 </head>
 
@@ -53,6 +52,18 @@
                 <option value="4">4th</option>
             </select>
 
+            <select id="sem">
+                <option value="">Select Semester</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+            </select>
+
             <button class="next" onclick="checkInput()">Next</button>
 
         </div>
@@ -67,9 +78,10 @@
 
                 <h2>Enter Register No</h2>
 
-                <input class="reg-input" type="text" placeholder="Enter Register Number">
+                <!-- Added id="regNo" -->
+                <input class="reg-input" id="regNo" type="text" placeholder="Enter Register Number">
 
-                <button class="submit-btn">Submit</button>
+                <button class="submit-btn" onclick="stud()">Submit</button>
 
             </div>
 
@@ -129,13 +141,12 @@
     </footer>
 
     <script>
-
         function checkInput() {
-
             let dept = document.getElementById("department").value;
             let year = document.getElementById("year").value;
-
-            if (dept === "" && year === "") {
+            let sem = document.getElementById("sem").value;
+            
+            if (dept === "" && year === "" && sem === "") {
                 alert("Please Select Department and Year");
             }
             else if (dept === "") {
@@ -144,14 +155,32 @@
             else if (year === "") {
                 alert("Please Select Year");
             }
-            else {
-                location.href = "page3.html?dept=" + dept + "&year=" + year;
+            else if (sem === "") {
+                alert("Please Select Semester");
             }
-
+            else {
+                location.href = "page3.html?dept=" + dept + "&year=" + year + "&sem=" + sem;
+            }
         }
 
+        // Run after DOM is ready
+        document.addEventListener("DOMContentLoaded", function () {
+            const regInput = document.getElementById("regNo");
+            regInput.addEventListener("keypress", function (e) {
+                if (!/[0-9]/.test(e.key)) {
+                    e.preventDefault(); // block non-numeric keys
+                }
+            });
+            regInput.addEventListener("input", function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        });
+
+        function stud() {
+    let regNo = document.getElementById("regNo").value; 
+    location.href = "stud_info.html?regNo=" + regNo;
+}
     </script>
 
 </body>
-
 </html>

@@ -205,6 +205,7 @@ select:hover {
     color: white;
     font-size: 15px;
     font-weight: 600;
+    margin-top: 40px;
 }
 
 .content2 {
@@ -213,6 +214,7 @@ select:hover {
     color: white;
     font-size: 15px;
     font-weight: 600;
+    margin-top: 40px;
 }
 
 span {

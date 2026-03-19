@@ -2,12 +2,20 @@
 
 /* fresh run clear */
 let params = new URLSearchParams(window.location.search);
-
 let dept = params.get("dept");
 let year = params.get("year");
+let sem = params.get("sem");
+let subcode = params.get("code");
+let sub = params.get("subject");
+let fac = params.get("faculty");
+
 
 document.getElementById("showDept").innerText = "Department : " + dept;
 document.getElementById("showYear").innerText = "Year : " + year;
+document.getElementById("showSem").innerText = "Semester : " + sem;
+document.getElementById("showCode").innerText = "CODE : " + subcode;
+document.getElementById("showSub").innerText = "SUBJECT : " + sub;
+document.getElementById("showFaculty").innerText = "FACULTY : " + fac;
 
 
 let params2 = new URLSearchParams(window.location.search);

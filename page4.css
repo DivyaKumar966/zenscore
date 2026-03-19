@@ -190,6 +190,14 @@ input {
     margin-top: 40px;
 }
 
+.summa2 {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 40px;
+}
+
 * {
     margin: 0;
     padding: 0;
