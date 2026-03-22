@@ -17,9 +17,9 @@
         LOGIN
         <i class="fa-solid fa-heart"></i>
       </h2>
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <input type="submit" value="Sign in" onclick="window.location.href='page2.html'" />
+      <input id="name" type="text" placeholder="Username">
+      <input  id="pass" type="password" placeholder="Password">
+      <input type="submit" value="Sign in" onclick="checkInput()" />
       <div class="group">
         <a href="#">Forgot Password</a>
         <a href="#">Sign up</a>
@@ -27,7 +27,26 @@
     </div>
   </div>
 </div>
-<!-- partial -->
-  
+
+<script>
+
+function checkInput(){
+  let pass = document.getElementById("pass").value;
+  let name = document.getElementById("name").value;
+
+  if(name ==="" && pass ===""){
+    alert("Plese Enter the Name and Password")
+  }
+  else if(pass ===""){
+    alert("Enter password")
+  }
+  else if(name ===""){
+    alert("Enter Name")
+  }
+  else{
+    location.href = "page2.html?name=" + name + "&pass=" + pass;  }
+}
+
+</script>  
 </body>
 </html>

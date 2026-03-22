@@ -79,7 +79,10 @@ body {
     align-items: center;
     /* horizontal center */
 }
-
+#info{
+    text-align: center;
+    align-items: center;
+}
 #mainPage {
     display: flex;
     flex-direction: column;
@@ -183,14 +186,6 @@ input {
 }
 
 .summa {
-    display: flex;
-    margin-top: 30px;
-    justify-content: center;
-    gap: 80px;
-    margin-top: 40px;
-}
-
-.summa2 {
     display: flex;
     margin-top: 30px;
     justify-content: center;
@@ -336,21 +331,27 @@ table {
     border-collapse: collapse;
     width: 70%;
 }
+table{
+    width: 800px;
+    height: 350px;
+}
 
 th,
 td {
-    border: 1px solid #333;
-    padding: 10px;
+    border: 1px solid #45f3ff;
+    padding: 20px;
     text-align: center;
 }
 
 th {
-    color: #ff2770;
+    color: black;
+    background: #45f3ff;
 }
 
 input {
     width: 70px;
     text-align: center;
+    font-size: 16px;
 }
 
 .pass {

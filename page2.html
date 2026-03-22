@@ -24,10 +24,10 @@
             <nav>
                 <a href="#">Help</a>
             </nav>
-            <button onclick="window.location.href='page1.html'">Logout</button>
+            <button onclick="window.location.href='index.html'">Logout</button>
         </div>
     </div>
-
+    <h2 id="name">NAME : </h2>
     <div class="container">
 
         <!-- LEFT SIDE -->
@@ -121,8 +121,7 @@
 
             <div class="footer-col">
                 <h3>Developed By</h3>
-                <p>Department of IT</p>
-                <p>NSN College of Engineering</p>
+                <p>NSN College of Engineering and Technology</p>
                 <p>Karur</p>
             </div>
 
@@ -145,7 +144,7 @@
             let dept = document.getElementById("department").value;
             let year = document.getElementById("year").value;
             let sem = document.getElementById("sem").value;
-            
+
             if (dept === "" && year === "" && sem === "") {
                 alert("Please Select Department and Year");
             }
@@ -177,10 +176,20 @@
         });
 
         function stud() {
-    let regNo = document.getElementById("regNo").value; 
-    location.href = "stud_info.html?regNo=" + regNo;
-}
+            let regNo = document.getElementById("regNo").value;
+            location.href = "stud_info.html?regNo=" + regNo;
+        }
+
+
+        let params = new URLSearchParams(window.location.search);
+
+        let name = params.get("name");
+
+        document.getElementById("name").innerText="NAME : " + name.toUpperCase();
+
+
     </script>
 
 </body>
+
 </html>
